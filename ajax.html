@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="username" id=""/><span></span><br/>
+        <input type="password" name="password"/>
+        <input type="button" name="" id="" value="提交">
+    </form>
+    <script>
+       window.onload=function(){
+           var inputs=document.getElementsByTagName('input');
+           inputs[2].onclick=function(){
+               var span=document.getElementsByTagName('span')[0];
+               ajax({
+                   url:'...',
+                   method:'get',
+                   dateType:'json',
+                   data:{
+                       'user':encodeURI(inputs[0].value),
+                       'password':inputs[1].value
+                   },
+                   succ:function(data){
+                       alert(data);
+                   },
+                   fail:function(data){
+                    alert(data);
+                   }
+
+               })
+           }
+       }
+    </script>
+</body>
+</html>
